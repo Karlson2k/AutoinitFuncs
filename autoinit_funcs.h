@@ -65,7 +65,7 @@
 * Current version of the header.
 * 0x01093001 = 1.9.30-1.
 */
-#define AUTOINIT_FUNCS_VERSION 0x01000000
+#define AUTOINIT_FUNCS_VERSION 0x01000001
 
 #if defined(__GNUC__)
 #/* if possible - check for supported attribute */
@@ -120,13 +120,14 @@
 #if defined(_M_X64) || defined(_M_AMD64)
 #define W32_VARDECORPREFIX
 #define W32_DECORVARNAME(v) v
+#define W32_VARDECORPEFIXSTR ""
 #elif defined(_M_IX86) || defined(_X86_)
 #define W32_VARDECORPREFIX _
 #define W32_DECORVARNAME(v) _##v
+#define W32_VARDECORPEFIXSTR "_"
 #else
 #error Do not know how to decorate symbols for this architecture
 #endif
-#define W32_VARDECORPEFIXSTR _STRMACRO(W32_VARDECORPREFIX)
 
 /* Internal variable prefix (can be any) */
 #define W32_INITHELPERVARNAME(f) _initHelperDummy_##f
