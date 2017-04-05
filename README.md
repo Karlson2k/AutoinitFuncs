@@ -31,10 +31,12 @@ void libDeinit(void)
 _SET_INIT_AND_DEINIT_FUNCS(libInit,libDeinit);
 ````
 
-If initializer or deinitializer functions is not needed, just define
+If initializer or deinitializer function is not needed, just define
 it as empty function.
 
-This header should work with GCC, clang, MSVC (2010 or later).
+This header should work with GCC, clang, MSVC (2010 or later) and
+SunPro / Sun Studio / Oracle Solaris Studio / Oracle Developer Studio
+compiler.
 Supported C and C++ languages; application, static and dynamic (DLL)
 libraries; non-optimized (Debug) and optimized (Release) compilation
 and linking.
